@@ -1,0 +1,47 @@
+:root {
+    --quantity: 16;
+}
+
+* {
+    padding: 0;
+    margin: 0;}
+
+ body{
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+ }
+ 
+ h1 {
+    text-align: center;
+    font-family: gotu;    
+}
+
+#Grid {   
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+#divContenitore {        
+    justify-self: center;
+    margin-top: 5px;
+    min-width: 300px;
+    min-height: 300px;
+    width: 85vw;
+	height: 85vw;
+	max-height: 82vh;
+	max-width: 82vh;
+    display: grid;
+    border: solid black;
+    background: lavender;
+    grid-template-columns: repeat(var(--quantity), 1fr);
+    grid-template-rows: repeat(var(--quantity), 1fr);
+}
+
+.divDentro {
+    border: solid lightgray 0.1px;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
