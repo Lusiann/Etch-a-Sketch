@@ -11,6 +11,10 @@ buttonChangeGrid.addEventListener('click',function(){
     quantiDivFare()    
 })
 
+let cambioHue = 0;
+
+
+
 
 //funzione per creare DivDentro
 function creaDiv (quantity = 16) {
@@ -38,19 +42,10 @@ divContenitore.addEventListener('mouseover',function(event){
 } )
 
 //funzionacambiacolore
-function changeColor (id) {
-    document.getElementById(id).style.background = colourMulticoloured();
-
-
-}
-//funzionecreacoloreRandom
-function colourMulticoloured(){
-	let r = Math.floor(Math.random() * 256);
-	let g = Math.floor(Math.random() * 256);
-	let b = Math.floor(Math.random() * 256);
-	return `rgba(${r}, ${g}, ${b})`
-}
-
+function changeColor (id) {   
+        document.getElementById(id).style.background = linearColorChange();
+    }
+    
 
 
 //funzioneResetEtch-A-Sketch
@@ -70,6 +65,15 @@ function quantiDivFare () {
     }else {
         creaDiv(quantity)
     }
+    
+}
+//funzioneLinearColorChange
+function linearColorChange() {
+    if (cambioHue === 360) {
+        cambioHue = 0;
+    }
+    cambioHue++
+    return `hsl(${cambioHue}, 100%, 50%)`  
     
 }
 
